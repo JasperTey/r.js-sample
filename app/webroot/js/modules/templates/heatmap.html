@@ -1,0 +1,18 @@
+<table class="activity-map center-child">
+	<tbody data-bind="foreach: rows">
+	<tr data-bind="foreach: $data">
+		<td data-bind="css: {'text-right':$index() == 0}, attr: {colspan:colspan}">
+			<!-- ko if: datestamp -->
+			<a href="#" class="day" data-bind="css:{'selected':fn.isSelected()}, style: style, attr: {title:title}, click: fn.click">
+				<span data-bind="text: label"></span>
+			</a>
+			<!-- /ko -->
+			<!-- ko ifnot: datestamp -->
+			<div data-bind="css: css, style: style, attr: {title:title}">
+				<span data-bind="text: label"></span>
+			</div>
+			<!-- /ko -->
+		</td>
+	</tr>
+	</tbody>
+</table>
